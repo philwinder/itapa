@@ -27,7 +27,7 @@ plt.ylabel("Percentage (%)", fontsize=14)
 plt.yticks(range(0, 101, 10))
 
 # Save as PNG
-plt.savefig("yearly_percentage_trend.png", dpi=300)
+plt.savefig("yearly_percentage_trend.png", dpi=300, transparent=True)
 
 # Show the plot
 plt.close()

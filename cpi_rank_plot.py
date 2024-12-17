@@ -22,6 +22,7 @@ ranks_by_year = pd.pivot_table(
 
 # Set style
 sns.set_style("whitegrid")
+plt.rcParams.update({'font.size': 14})  # Increased base font size from 12 to 14
 
 # Create plot with larger figure size to accommodate annotations
 plt.figure(figsize=(14, 10))
@@ -46,12 +47,12 @@ for year, (event, y_offset) in events.items():
                 ha='center',
                 bbox=dict(boxstyle='round,pad=0.5', fc='white', ec='gray', alpha=0.7),
                 arrowprops=dict(arrowstyle='->', connectionstyle='arc3,rad=0.2'),
-                fontsize=10)
+                fontsize=12)  # Increased from 10 to 12
 
 # Customize plot
-plt.title('CPI Rank Position Over Time with Key Events\n(2012-2023)', pad=20, fontsize=14)
-plt.xlabel('Year', fontsize=12)
-plt.ylabel('Rank Position\n(Lower is Better)', fontsize=12)
+plt.title('CPI Rank Position Over Time with Key Events\n(2012-2023)', pad=20, fontsize=16)  # Increased from 14 to 16
+plt.xlabel('Year', fontsize=14)  # Increased from 12 to 14
+plt.ylabel('Rank Position\n(Lower is Better)', fontsize=14)  # Increased from 12 to 14
 
 # Invert y-axis since lower rank numbers are better
 plt.gca().invert_yaxis()
@@ -63,11 +64,11 @@ plt.grid(True, linestyle='--', alpha=0.7)
 plt.xticks(rotation=45)
 
 # Add legend
-plt.legend(fontsize=10)
+plt.legend(fontsize=12)  # Increased from 10 to 12
 
 # Adjust layout to prevent annotation cutoff
 plt.tight_layout()
 
 # Save the plot
-plt.savefig('cpi_rank_comparison.png', dpi=300, bbox_inches='tight')
+plt.savefig('cpi_rank_comparison.png', dpi=300, bbox_inches='tight', transparent=True)
 plt.close() 

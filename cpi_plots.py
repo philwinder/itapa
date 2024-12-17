@@ -20,6 +20,7 @@ df_ie = pd.DataFrame(ie_data)
 
 # Set style
 sns.set_style("whitegrid")
+plt.rcParams.update({'font.size': 12})  # Increase base font size
 
 # Create single plot
 plt.figure(figsize=(12, 8))
@@ -72,5 +73,5 @@ plt.legend()
 plt.tight_layout()
 
 # Save the plot
-plt.savefig('cpi_comparison.png', dpi=300, bbox_inches='tight')
+plt.savefig('cpi_comparison.png', dpi=300, bbox_inches='tight', transparent=True)
 plt.close()
